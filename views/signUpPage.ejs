@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <!-- icons -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <!-- css -->
+    <link rel="stylesheet" href="/stylesheets/styles3.css">
+    <!-- script -->
+    <script src="./javaScripts/authentication.js" defer></script>
+</head>
+<body>
+    <header>
+        <%- include('./headerPartial',{isLoggedIn: isLoggedIn}) %>
+    </header>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-wrapper">
+                <h2>Sign Up</h2>
+                <% if(message){ %>
+                    <p class="message"><%= message %></p>
+                <%}%>
+                <form action="/signUp" method="POST">
+                    <div class="input-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter password" pattern="[A-Za-z0-9@#$%^&*]{6,}" 
+                        title="Password must contain at least 6 characters, including letters, numbers, and special characters like @, #, $, etc." 
+                        required>
+                        <i class="ri-eye-line eye-icons"></i>
+                        <i class="ri-eye-off-line eye-icons hidden"></i>
+                    </div>
+
+                    <!-- User/Admin radio buttons -->
+                    <div class="input-group">
+                        <label for="role">Sign up as:</label>
+                        <div class="role-options">
+                            <input type="radio" id="user" name="role" value="user" required>
+                            <label for="user">User</label>
+                            <input type="radio" id="admin" name="role" value="admin" required>
+                            <label for="admin">Admin</label>
+                            <input type="radio" id="seller" name="role" value="seller" required>
+                            <label for="seller">seller</label>
+                        </div>
+                    </div>
+
+                    <button class="btn" type="submit">Sign Up</button>
+                    <p>Already have an account? <a class="signUp" href="/logIn">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

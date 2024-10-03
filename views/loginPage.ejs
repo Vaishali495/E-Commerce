@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- icons -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <!-- css -->
+    <link rel="stylesheet" href="/stylesheets/styles3.css">
+    <!-- script -->
+    <script src="./javaScripts/authentication.js" defer></script>
+</head>
+<body>
+    <header>
+        <%- include('./headerPartial',{isLoggedIn: isLoggedIn}) %>
+    </header>
+    <section>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-wrapper">
+                <h2>Login</h2>
+                <% if(message){ %>
+                    <p class="message"><%= message %></p>
+                <%}%>
+                <form action="/logIn" method="POST">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter password" required >
+                        <i class="ri-eye-line eye-icons"></i>
+                        <i class="ri-eye-off-line eye-icons hidden"></i>
+                    </div>
+                    <button class="btn" type="submit">Login</button>
+                    <p>Forgot Password? <a class="forgot-pas" href="/forgotPas" >Click Here</a></p>
+                    <p>Don't have an account? <a class="signUp" href="/signUp">Sign up</a></p> 
+                </form>
+            </div>
+        </div>
+    </div>
+    </section>
+</body>
+</html>
+
+<!-- User/Admin radio buttons -->
+<!-- <div class="input-group">
+    <label for="role">Login as:</label>
+    <div class="role-options">
+        <input type="radio" id="user" name="role" value="user" required>
+        <label for="user">User</label>
+        <input type="radio" id="admin" name="role" value="admin" required>
+        <label for="admin">Admin</label>
+    </div>
+</div> -->

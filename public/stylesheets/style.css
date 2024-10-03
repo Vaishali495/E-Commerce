@@ -1,0 +1,127 @@
+/* otp page css */
+/* Ensure the html and body take up the full height of the viewport */
+html, body {
+    /* height: 100%; */
+    margin: 0;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5; /* Optional: to give a background color */
+}
+
+header {
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    margin-left: 20px;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.search-bar{
+    margin-right: 20px;
+    gap:20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.icons{
+    /* text-decoration: none; */
+    margin-left: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Style for the otp-container to center it */
+.otp-container {
+    margin: 35%;
+    margin-top: 10%;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.otp-input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.message{
+    margin-left:2px;
+    color:red;
+}
+
+.login-logout-btn {
+    /* width: 100%; */
+    margin-left: 20px;
+    padding: 5px;
+    background-color: #000;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    a{
+        text-decoration: none;
+        color:white;
+    }
+}
+
+.login-logout-btn:hover {
+    background-color: #333;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+

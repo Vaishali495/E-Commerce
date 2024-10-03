@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <!-- icons -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <!-- css -->
+    <link rel="stylesheet" href="/styleSheets/style.css">
+    
+</head>
+<header>
+    <%- include('./headerPartial',{isLoggedIn: isLoggedIn}) %>
+</header>
+
+<body stlye="margin-left: 20%;" >
+    <div class="otp-container">
+        <h2>Enter OTP</h2>
+        <p>Please enter the 4-digit OTP sent to your email.</p>
+        <form action="/verifyOtp" method="POST">
+            <input type="text" name="userOtp" class="otp-input" maxlength="4" placeholder="Enter OTP" autocomplete="off">
+            <% if(message){ %>
+                <p class="message"><%= message %></p>
+            <%}%>
+            <input type="hidden" name="userObj" value="<%= userObj %>">
+            <button type="submit" class="submit-btn">Verify</button>
+        </form>
+        <form action="/resendOtp" method="POST">
+            <input type="hidden" name="userObj" value="<%= userObj %>">
+            <button type="submit" class="submit-btn">Resend OTP</button>
+        </form>
+    </div>
+</body>
+</html>

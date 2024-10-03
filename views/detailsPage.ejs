@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceed to Buy</title>
+    <link rel="stylesheet" href="/stylesheets/detailsPageStyle.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Proceed to Buy</h2>
+        
+        <!-- User Details Form -->
+        <div class="form-container">
+            <h3>Enter Your Details</h3>
+            <form action="/order/submit-order" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="<%= user.username %>" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<%= user.email %>" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+
+                <label for="instructions">Additional Instructions (Optional):</label>
+                <textarea id="instructions" name="instructions" rows="2"></textarea>
+
+                <div class="payment-method">
+                    <label for="payment">Payment Method:</label>
+                    <select id="payment" name="payment" required>
+                        <option value="cod">Cash on Delivery</option>
+                        <option value="credit">Credit Card</option>
+                        <option value="debit">Debit Card</option>
+                        <option value="netbanking">Net Banking</option>
+                    </select>
+                </div>
+        </div>
+
+        <!-- Order Summary -->
+        
+        <div class="summary-container">
+            <h3>Order Summary</h3>
+            <% detailedProduct.forEach(product => { %>
+                <ul>
+                    <li>Product Name: <%= product.prodName %> - Quantity: <%= product.quantity %></li>
+                    <li>Price: <%= product.prodPrice %></li>
+                </ul>
+            <% }) %>
+            <div class="total">
+                <strong>Total Items: <%= totalItems %></strong><br>
+                <strong>Total Price: <%= totalPrice %></strong>
+            </div>
+        </div>
+        <button type="submit" class="btn">Place Order</button>
+    </form>
+    </div>
+</body>
+</html>

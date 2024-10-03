@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="/styleSheets/styles6.css">
+</head>
+<body>
+    <div class="container">
+        <div class="reset-password-box">
+            <h2>Reset Password</h2>
+            <form action="/update-password" method="POST">                
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" name="newPassword" placeholder="Enter your new password" required>
+                
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your new password" required>
+                <% if(message){ %>
+                    <p class="message"><%= message %></p>
+                <%}%>
+                <button type="submit">Reset Password</button>
+            </form>
+            <a href="/login" class="back-link">Back to Login</a>
+        </div>
+    </div>
+</body>
+</html>

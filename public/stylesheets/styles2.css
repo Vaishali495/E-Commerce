@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+header {
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    margin-left: 20px;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.search-bar{
+    margin-right: 20px;
+    gap:20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.login-logout-btn {
+    /* width: 100%; */
+    margin-left: 20px;
+    padding: 5px;
+    background-color: #000;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    a{
+        text-decoration: none;
+        color:white;
+    }
+}
+
+.login-logout-btn:hover {
+    background-color: #333;
+}
+
+.container {
+    /* margin: 25%; */
+    margin-top: 10%;
+    display: flex;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+}
+
+.profile-image {
+    background-color: #2ecc71;
+    padding: 20px;
+    /* width: 100%; */
+    height: 370px;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.profile-image img {
+    width:200px;
+    margin-left: 40px;
+    border-radius: 50%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.profile-info {
+    padding: 40px;
+    flex: 1;
+}
+
+.profile-info h2 {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.profile-info h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 5px;
+    background-color: #2ecc71;
+    margin-top: 10px;
+}
+
+.profile-info p {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.message{
+    margin-left:2px;
+    color:red;
+}
+
+.icons{
+    /* text-decoration: none; */
+    margin-left: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px; 
+    margin-top: 20px;
+}
+
+.add-product-btn {
+    background-color: #2ecc71;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.add-product-btn:hover {
+    background-color: #4cb076;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.product {
+    text-align: center;
+}
+
+.product img {
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.prodImage-size{
+    height:25vh;
+    width:20vw;
+}
+
+.card-text{
+    font-size: 13px;
+}
+
+.price-div{
+    display: flex;
+    gap: 8px;
+}
+
+.prev-price{
+    font-size: 12px;
+    text-decoration-line: line-through; 
+    color:brown;
+    margin-top: 8px;
+}
+
+.price{
+    font-size: 18px;
+}
+
+.card{
+    /* width:30rem; */
+    width: 19rem; 
+    /* height:8rem; */
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap; /* This allows products to wrap to the next line */
+    /* justify-content: center; */
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.products .card {
+    flex: 0 0 19rem; /* This ensures each product takes a fixed width */
+    max-width: 19rem;
+}
+
+.btn{
+    margin-left: 5%;
+}
+
+#delete-btn{
+    margin-left: 38%;
+}
+
+.admin-products-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.admin-products-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.admin-products-section .subheading {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.card-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.price-div input {
+    width: 100%;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.form-actions a {
+    width: 48%;
+    text-align: center;
+}
+
+#delete-btn {
+    background-color: red;
+    border-color: red;
+}
+
+.price-input{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    /* border: none; 
+    outline: none; */
+}
+
+.cards-label{
+    margin-top: 2%;
+}
+
+.profile-submitBtn{
+    /* margin-left:25px; */
+    border:none;
+    padding:8px;
+    color:white;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #575b57;
+}
+
+.profile-submitBtn:hover{
+    background-color: #323131;
+}

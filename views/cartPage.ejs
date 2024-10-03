@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Cart</title>
+    <!-- icons -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <!-- css -->
+    <link rel="stylesheet" href="/styleSheets/cartStyle.css">
+    <!-- script -->
+    <script src="/javaScripts/cart.js" defer></script>
+</head>
+<body> 
+  <header>
+    <%- include('./headerPartial',{isLoggedIn: isLoggedIn}) %>
+  </header>
+
+    <% if(products.length == 0){ %>
+          <h3>No Cart Items Available</h3>
+    <% } else { %>
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+
+        <% products.forEach(product => { %>
+            <div class="cart-items">
+                <div class="cart-item" data-product-id="<%= product.productDetails._id %>">
+                    <div class="item-details">
+                        <img src="/uploads/<%= product.productDetails.productImage %>" alt="<%= product.productDetails.productName %>" class="product-image">
+                        <div>
+                            <h3><%= product.productDetails.productName %></h3>
+                            <p>₹<%= product.productDetails.productPrice %></p>
+                        </div>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" product-id="<%= product.productDetails._id %>" onclick="decreaseQuantity(event)">-</button>
+
+                        <span class="quantity"><%= product.quantity %></span>
+
+                        <button class="quantity-btn" product-id="<%= product.productDetails._id %>" onclick="increaseQuantity(event)">+</button>
+                    </div>
+                    <button product-id="<%= product.productDetails._id %>" class="delete-btn" onclick="removeFromCart(event)">Remove</button>
+                </div>
+            </div>
+        <% }) %>
+        
+        <div class="cart-total">
+            <h2>Total Price: ₹<span id="total-price"><%=  totalPrice %></span></h2>
+            <h2>Number of Items: <span id="total-items"><%=  totalItems %></span></h2>
+        </div>
+        <a href="/order/fillTheDetails" ><button class="proceed-to-buy">Proceed To Buy</button></a>
+    </div>
+    <% } %>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

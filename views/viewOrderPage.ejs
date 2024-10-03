@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders</title>
+  <!-- icons -->
+  <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+  rel="stylesheet"/>
+  <!-- css -->
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
+    .order-card {
+      background-color: white;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .order-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .order-header h2 {
+      margin: 0;
+    }
+    .order-details {
+      margin-bottom: 20px;
+    }
+    .order-details p {
+      margin: 5px 0;
+    }
+    .product-list {
+      list-style: none;
+      padding: 0;
+    }
+    .product-list li {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    .product-list li:last-child {
+      border-bottom: none;
+    }
+    .total-amount {
+      font-weight: bold;
+      text-align: right;
+      margin-top: 10px;
+    }
+    .status {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <%- include('./headerPartial',{isLoggedIn: isLoggedIn}) %>
+  </header>
+
+  <div class="container">
+    <% if( orders.length == 0 ) {%>
+      <h2>You haven't placed any orders yet!</h2>
+      <% }else{ %>
+    <h1>Your Orders</h1>
+    <% orders.forEach((order) => { %>
+        <div class="order-card">
+        
+            <div class="order-header">
+              <h2>Order ID: <%= order._id %></h2>
+              <span class="status">Status: <%= order.status %></span>
+            </div>
+      
+            <div class="order-details">
+              <p><strong>Order Date: <%= order.orderDate.toLocaleDateString('en-IN', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })%></strong></p>
+              <p><strong>Name: <%= order.orderDetails.username %> </strong> </p>
+              <p><strong>Phone: <%= order.orderDetails.phone %> </strong></p>
+              <p><strong>Address:<%= order.orderDetails.address %></strong></p>
+              <p><strong>Instructions:<%= order.orderDetails.instructions %></strong></p>
+              <p><strong>Payment Method: <%= order.orderDetails.payment %></strong></p>
+            </div>
+      
+            <h3>Products:</h3>
+            <ul class="product-list">
+              <% order.products.forEach((product) => { %>
+                    <li>
+                        Product Name: <%= product.productName %> <br>
+                        Product Price: <%= product.productPrice%><br>
+                        Quantity: <%= product.quantity %>
+                    </li>
+              <% }); %>     
+            </ul>
+            <div class="total-amount">
+              <p>Total Items: <%= order.totalItems %></p>
+              <p>Total Amount: ₹<%= order.totalAmount %></p>
+            </div>
+          </div>      
+     <% }); %>
+    <% } %>      
+  </div>
+</body>
+</html>

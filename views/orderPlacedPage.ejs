@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Placed Successfully</title>
+    <link rel="stylesheet" href="/stylesheets/orderPlacedStyle.css">
+</head>
+<body>
+    <div class="success-container"> 
+        <div class="success-message">
+            <div class="checkmark-container">
+                <div class="checkmark">
+                    <span class="line-tip"></span>
+                    <span class="line-long"></span>
+                    <div class="circle"></div>
+                    <div class="fix"></div>
+                </div>
+            </div>
+            <h1>Order Placed Successfully!</h1>
+            <p>Thank you for your purchase. Your order ID is <strong><%= orderId %></strong>.</p>
+            <!-- <p>You will receive a confirmation email shortly.</p> -->
+            <button onclick="window.location.href='/'" class="btn">Continue Shopping</button>
+        </div>
+    </div>
+</body>
+</html>

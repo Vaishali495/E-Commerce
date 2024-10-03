@@ -1,0 +1,24 @@
+<div class="navbar">
+    <div class="logo">E-Shopper</div>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/aboutUs">About Us</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
+        </ul>
+    </nav>
+    <div class="search-bar">
+        <!-- <input type="text" placeholder="Search for Product"> -->
+        <a href="/profile" ><i id="user-icon" class="ri-user-fill icons"></i></a>
+        <% if (isLoggedIn) { %>
+            <%= username %>
+            <button id="log-out-btn" type="submit" class="login-logout-btn"><a href="/logOut">Logout</a></button>
+        <% } else { %>
+            <button type="submit" id="log-in-btn" class="login-logout-btn"><a href="/logIn">Login</a></button>
+        <% } %> 
+
+        <!-- <a href="/profile" ><i id="fav-icon" class="ri-heart-3-line icons"></i></a> -->
+
+        <a href="/cart/cartPage" ><i id="cart-icon" class="ri-shopping-cart-line icons"></i></a>
+    </div>
+</div>
